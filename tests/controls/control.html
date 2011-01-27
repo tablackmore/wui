@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Control - Test</title>
+  <style src="../../src/js/wui_default_v0.1.js"></style>
+  <style src="../../src/js/wui_iPhone_v0.1.js"></style>
+  <style src="../../src/js/wui_android_v0.1.js"></style>
+  <script src="../../src/js/wui_namespace_v0.1.js"></script>
+  <script src="../../src/js/wui_misc_v0.1.js"></script>
+  <script src="../../src/js/wui_controls_v0.1.js"></script>
+  <script>
+  var scroll = function(){
+        setTimeout(scrollTo, 0, 0 ,1);
+        console.log('scroll');
+      };
+      
+     window.addEventListener('load', scroll, false);
+   // Load controls when DOM content is ready.
+  document.addEventListener('DOMContentLoaded', function(){
+    var app = wui.controls.app();
+    var body = document.getElementsByTagName('body')[0];
+    body.appendChild(app.getElement());
+    
+    var standardControlClick = wui.controls.control();
+    standardControlClick.getElement().innerHTML = "Control "+ standardControlClick.getControlNumber() +" with click";
+    standardControlClick.setOnClick(function(){alert('clicked');});
+  
+    var standardControlToggle = wui.controls.control();
+    standardControlToggle.getElement().innerHTML = "Control "+ standardControlToggle.getControlNumber() +" with toggle control " + standardControlClick.getControlNumber();
+    standardControlToggle.setOnClick(function(){standardControlClick.toggle();});
+    
+  
+    app.appendControl(standardControlClick);
+    app.appendControl(standardControlToggle);
+    
+    /*
+    // Slide up the search bar
+    setTimeout(scrollTo, 0, 0 ,1);
+      */       
+  }, false);
+ 
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
