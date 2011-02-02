@@ -1,0 +1,15 @@
+# Set the source directory
+srcdir = ../src/js/
+
+# Create the list of modules
+modules =   ${srcdir}wui_namespace_v0.1.js\
+            ${srcdir}wui_misc_v0.1.js\
+            ${srcdir}wui_controls_v0.1.js            
+
+all: ../wui_v0.1.js ../wui_mini_v0.1.js
+
+../wui_v0.1.js: ${modules}
+	cat > $@ $^
+  
+../wui_mini_v0.1.js: ../wui_v0.1.js
+	java -jar yuicompressor-2.4.2.jar -o  $@ $^ --charset utf-8
