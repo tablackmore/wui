@@ -6,12 +6,10 @@
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/controls/wui_menuBar.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/controls/wui_menuItem.css"/>
-        <style>
-         .fullscreen{height:100%;}
-        </style>
         <script src="../../src/js/wui.js"></script>
         <script src="../../src/js/wui_controls.js"></script>
         <script src="../../src/js/wui_controls_control.js"></script>
+        <script src="../../src/js/wui_controls_app.js"></script>
         <script src="../../src/js/wui_controls_panel.js"></script>
         <script src="../../src/js/wui_controls_menu.js"></script>
         <script src="../../src/js/wui_controls_menu_menuBar.js"></script>
@@ -19,9 +17,7 @@
         <script>
             // Load controls when DOM content is ready.
             document.addEventListener('DOMContentLoaded', function() {
-                var app = wui.controls.control();
-                app.css.addClass("fullscreen");
-                app.css.addClass("wui_postion_vbox");
+                var app = wui.controls.app();
                 
                 var panel1 = wui.controls.panel();
                 panel1.setText("Panel 1");
