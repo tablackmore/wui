@@ -1,0 +1,13 @@
+ * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+html{height:100%;}
+body{height:100%; margin:0;padding:0; font-family: Arial,"MS Trebuchet",sans-serif;}
+
+/*Positioning*/
+.hbox{display:-webkit-box;-webkit-box-orient:horizontal;}
+.vbox{display:-webkit-box;-webkit-box-orient:vertical;}
+.flex{-webkit-box-flex:1;}
+

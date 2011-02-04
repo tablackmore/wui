@@ -1,0 +1,15 @@
+heading{width:100%; color:#FFF;font:bold 20px Arial,"MS Trebuchet",sans-serif;margin:0 auto;padding:10px 0;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:400px;}
+h2{margin:15px;}
+p{padding:10px;}
+.box{height:100%;display:-webkit-box;-webkit-box-orient:vertical;}
+
+/*Basic layout*/
+.titleBar{display:-webkit-box;-webkit-box-orient:horizontal;border-bottom:1px solid #666;height:42px;}
+.rightTitlebarContainer{width:100px;}
+.leftTitlebarContainer{width:100px; margin:7px;}
+#content{display:-webkit-box;-webkit-box-orient:vertical;height:100%;}
+.panel{display:-webkit-box;-webkit-box-flex:1;margin:0px;padding:0px;-webkit-box-orient:vertical;}
+.menuBar{display:-webkit-box;-webkit-box-orient:horizontal;border-top:1px solid #333;text-align:center;}
+.menuBar > *{-webkit-box-flex:1;font-size:.8em;height:1.2em;padding:26px 0 .4em 0;color:#808184;text-decoration:none;margin:.3em;display:block;width:1px;}
+.menuIcon{font:bold 24px/26px inherit;height:26px;margin-top:-26px;text-align:center;text-shadow:rgba(255,255,255,0.3) 1px 1px 0px;}
+.menuActive{-webkit-border-radius:.4em;color:#ddd;}
