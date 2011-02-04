@@ -1,9 +1,5 @@
 /* Positioning */
-wui_control_menuBar{}
+.wui_control_menuBar{}
 /* Style */
-wui_control_menuBar{border-top:1px solid #333;text-align:center;}
+.wui_control_menuBar{background-image:-webkit-gradient(linear,0% 0%,0% 100%,from(#333),to(#000000),color-stop(.5,#222),color-stop(.5,#161616)); border-top:1px solid #333;text-align:center;}*/
 
-.menuBar{}
-.menuBar > *{-webkit-box-flex:1;font-size:.8em;height:1.2em;padding:26px 0 .4em 0;color:#808184;text-decoration:none;margin:.3em;display:block;width:1px;}
-.menuIcon{font:bold 24px/26px inherit;height:26px;margin-top:-26px;text-align:center;text-shadow:rgba(255,255,255,0.3) 1px 1px 0px;}
-.menuActive{-webkit-border-radius:.4em;color:#ddd;}

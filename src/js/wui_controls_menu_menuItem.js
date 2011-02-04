@@ -13,7 +13,7 @@ wui.controls.menu.menuItem = function() {
     
 
     that.setText = function(text) {
-        a.getDomElement.innerHTML = text;
+        a.getDomElement().innerHTML = text;
     };
     that.setPanel = function(panel) {
         panelControl = panel;

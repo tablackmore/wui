@@ -1,6 +1,6 @@
 /* Positioning */
-html{height:100%;}
-body{height:100%; margin:0;padding:0; }
+html{height:100%; }
+body{height:100%;  margin:0; padding:0;}
 
 .wui_position_hbox{display:-webkit-box;-webkit-box-orient:horizontal;}
 .wui_postion_vbox{display:-webkit-box;-webkit-box-orient:vertical;}

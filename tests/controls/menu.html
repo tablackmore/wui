@@ -4,8 +4,11 @@
         <meta charset="utf-8" />
         <title>Menu - Test</title>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui.css"/>
-        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/controls/wui_menubar.css"/>
-        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/controls/wui_menubar.css"/>
+        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/controls/wui_menuBar.css"/>
+        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/controls/wui_menuItem.css"/>
+        <style>
+         .fullscreen{height:100%;}
+        </style>
         <script src="../../src/js/wui.js"></script>
         <script src="../../src/js/wui_controls.js"></script>
         <script src="../../src/js/wui_controls_control.js"></script>
@@ -16,6 +19,10 @@
         <script>
             // Load controls when DOM content is ready.
             document.addEventListener('DOMContentLoaded', function() {
+                var app = wui.controls.control();
+                app.css.addClass("fullscreen");
+                app.css.addClass("wui_postion_vbox");
+                
                 var panel1 = wui.controls.panel();
                 panel1.setText("Panel 1");
                 
@@ -30,19 +37,19 @@
                 menuItem1.setText("one");
                 menuItem1.setPanel(panel1);
                 menuItem1.setIconControl("1");
-                menuItem1.setSelectedIconControl("<h2>1</h2>");
+                menuItem1.setSelectedIconControl("<strong>1</strong>");
                 
                 var menuItem2 = wui.controls.menu.menuItem();
                 menuItem2.setText("two");
                 menuItem2.setPanel(panel2);
                 menuItem2.setIconControl("2");
-                menuItem2.setSelectedIconControl("<h2>2</h2>");
+                menuItem2.setSelectedIconControl("<strong>2</strong>");
                  
                 var menuItem3 = wui.controls.menu.menuItem();
                 menuItem3.setText("three");
                 menuItem3.setPanel(panel3);
                 menuItem3.setIconControl("3");
-                menuItem3.setSelectedIconControl("<h2>3</h2>");
+                menuItem3.setSelectedIconControl("<strong>3</strong>");
                 
                 var menuBar = wui.controls.menu.menuBar();
                 menuBar.menuItems.add(menuItem1);
@@ -50,12 +57,15 @@
                 menuBar.menuItems.add(menuItem3);
                 menuBar.setActive(menuItem2);
                 
-                /* Add control to page */
+                /* Add controls to app */
+                app.appendControl(panel1);
+                app.appendControl(panel2);
+                app.appendControl(panel3);
+                app.appendControl(menuBar);
+                
+                /* Add app to page */
                 var body = document.getElementsByTagName('body')[0];
-                body.appendChild(panel1.getDomElement());
-                body.appendChild(panel2.getDomElement());
-                body.appendChild(panel3.getDomElement());
-                body.appendChild(menuBar.getDomElement());
+                body.appendChild(app.getDomElement());
             }, false);
 
         </script>
