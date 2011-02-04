@@ -1,7 +1,8 @@
 /*
  * This is the very simple base object for building all other controls
  * Dependencies: 
- *  wui_namespace.js
+ *  wui.js
+ *  wui_controls.js
  */
 wui.controls.control = ( function() {
     var count = 0;
@@ -90,11 +91,11 @@ wui.controls.control = ( function() {
         var setId = function(text) {
             mainDiv.id = text;
         };
-        var appendControl = function(control) {
-            mainDiv.appendChild(control.getDomElement());
-        };
         var getDomElement = function() {
             return mainDiv;
+        };
+        var appendControl = function(control) {
+            mainDiv.appendChild(control.getDomElement());
         };
         return{
             getDomElement: getDomElement,

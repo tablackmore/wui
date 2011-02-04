@@ -1,10 +1,11 @@
 /*
  * A basic titlebar with three containers.
  * Dependencies:
- *  wui_namespace.js
- *  controls/wui_control.js
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_control.js
  * 
- *  wui_main.css
+ *  wui.css
  *  cotrols/target/wui_titlebar.css
  */
 wui.controls.titleBar = function() {
