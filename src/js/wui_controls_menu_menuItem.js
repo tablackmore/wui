@@ -8,10 +8,7 @@ wui.controls.menu.menuItem = function() {
     var panelControl;
     var normalIcon = "";
     var selectedIcon = "";
-
     var a = wui.controls.control("a");
-    
-
     that.setText = function(text) {
         a.getDomElement().innerHTML = text;
     };
