@@ -8,53 +8,29 @@
  *  cotrols/target/wui_titlebar.css
  */
 wui.controls.titleBar = function() {
-    var that = wui.controls.control();
-    var mainDiv = that.getElement();
-    var rightDiv = wui.controls.control();
-    var leftDiv = wui.controls.control();
-    var title = document.createElement("header");
-    title.className = "flex";
+    var that = wui.controls.control("header");
+    var mainDiv = that.getDomElement();
+    that.rightContainer = wui.controls.control();
+    that.leftContainer = wui.controls.control();
+    var title = document.createElement("h1");
     
-    that.setClass("titleBar");
-    rightDiv.setClass("rightTitlebarContainer");
-    leftDiv.setClass("leftTitlebarContainer");
+    title.className = "wui_position_flex wui_control_titleBar_title";
+    that.css.addClass("wui_position_hbox");
+    that.css.addClass("wui_control_titleBar");
+    that.rightContainer.css.addClass("wui_control_titleBar_rightContainer");
+    that.leftContainer.css.addClass("wui_control_titleBar_leftContainer");
     
     that.show = function() {
-        that.getElement().style.display = "-webkit-box";
+        that.getDomElement().style.display = "-webkit-box";
     };
     
     that.setText = function(text) {
         title.innerHTML = text;
     };
        
-    that.rightContainer = (function() {
-        var addElement = function(element) {
-            rightDiv.getElement().appendChild(element);
-        };
-        var clear = function() {
-            rightDiv.getElement().innerHTML = "";
-        };
-        return{
-            addElement: addElement,
-            clear: clear
-        };
-    }());
-    
-    that.leftContainer = (function() {
-        var addElement = function(element) {
-            leftDiv.getElement().appendChild(element);
-        };
-        var clear = function() {
-            leftDiv.getElement().innerHTML = "";
-        };
-        return{
-            addElement: addElement,
-            clear: clear
-        };
-    }());
-    
-    mainDiv.appendChild(leftDiv.getElement());
+    mainDiv.appendChild(that.leftContainer.getDomElement());
     mainDiv.appendChild(title);
-    mainDiv.appendChild(rightDiv.getElement());
+    mainDiv.appendChild(that.rightContainer.getDomElement());
+    
     return that;
 };

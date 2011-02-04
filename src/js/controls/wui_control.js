@@ -91,13 +91,13 @@ wui.controls.control = ( function() {
             mainDiv.id = text;
         };
         var appendControl = function(control) {
-            mainDiv.appendChild(control.getElement());
+            mainDiv.appendChild(control.getDomElement());
         };
-        var getElement = function() {
+        var getDomElement = function() {
             return mainDiv;
         };
         return{
-            getElement: getElement,
+            getDomElement: getDomElement,
             getControlNumber: getControlNumber,
             appendControl: appendControl,
             show: show,

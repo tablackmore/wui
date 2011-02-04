@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Menu - Test</title>
+        <link rel="stylesheet" type="text/css" href="../../src/css/iphone/wui_main.css"/>
+        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/controls/wui_panel.css"/>
+        <script src="../../src/js/wui_namespace.js"></script>
+        <script src="../../src/js/controls/wui_control.js"></script>
+        <script src="../../src/js/controls/wui_panel.js"></script>
+        <script>
+            // Load controls when DOM content is ready.
+            document.addEventListener('DOMContentLoaded', function() {
+                var panel = wui.controls.panel();
+                panel.setText("I'm a panel");
+                
+                /* Add control to page */
+                var body = document.getElementsByTagName('body')[0];
+                body.appendChild(panel.getDomElement());
+            }, false);
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

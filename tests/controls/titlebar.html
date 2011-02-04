@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
+    <head>
+        <meta charset="utf-8" />
+        <title>TitleBar - Test</title>
+        <link rel="stylesheet" type="text/css" href="../../src/css/iphone/wui_main.css"/>
+        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/controls/wui_titlebar.css"/>
+        <script src="../../src/js/wui_namespace.js"></script>
+        <script src="../../src/js/controls/wui_control.js"></script>
+        <script src="../../src/js/controls/wui_titlebar.js"></script>
+        <script>
+            // Load controls when DOM content is ready.
+            document.addEventListener('DOMContentLoaded', function() {
+                var control1 = wui.controls.control();
+                control1.getDomElement().innerHTML = "Control 1";
+                control1.setOnClick( function() {
+                    alert('clicked');
+                });
+                
+                var control2 = wui.controls.control();
+                control2.getDomElement().innerHTML = "Control 2";
+                control2.setOnClick( function() {
+                  alert("clicked");
+                });
+              
+                var titleBar = wui.controls.titleBar();
+                titleBar.setText("Hello");
+                titleBar.leftContainer.appendControl(control1);
+                titleBar.rightContainer.appendControl(control2);
+                
+                /* Add control to page */
+                var body = document.getElementsByTagName('body')[0];
+                body.appendChild(titleBar.getDomElement());
+            }, false);
 
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
-       Remove this if you use the .htaccess -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-  <title>titlebar</title>
-  <meta name="description" content="" />
-  <meta name="generator" content="Studio 3 http://aptana.com/" />
-  <meta name="author" content="Tom Blackmore" />
-
-  <meta name="viewport" content="width=device-width; initial-scale=1.0" />
-
-  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-</head>
-
-<body>
-  <div>
-    <header>
-      <h1>titlebar</h1>
-    </header>
-    <nav>
-      <p><a href="/">Home</a></p>
-      <p><a href="/contact">Contact</a></p>
-    </nav>
-
-    <div>
-      
-    </div>
-
-    <footer>
-     <p>&copy; Copyright 2011 by Tom Blackmore</p>
-    </footer>
-  </div>
-</body>
+        </script>
+    </head>
+    <body>
+    </body>
 </html>

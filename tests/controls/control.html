@@ -1,74 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Control - Test</title>
-  <link rel="stylesheet" type="text/css" href="../../src/css/wui_main.css"/>
-  <style>
-    .redBkg {background-color:red;}
-    .blueBkg {background-color:blue;}
-    .yellowText {color:yellow;}
-  </style>
-  <script src="../../src/js/wui_namespace.js"></script>
-  <script src="../../src/js/controls/wui_control.js"></script>
-  <script>
-    var scroll = function(){
-        setTimeout(scrollTo, 0, 0 ,1);
-    };
-      
-    window.addEventListener('load', scroll, false);
-    
-    // Load controls when DOM content is ready.
-    document.addEventListener('DOMContentLoaded', function(){
-   
-    var body = document.getElementsByTagName('body')[0];
+    <head>
+        <meta charset="utf-8" />
+        <title>Control - Test</title>
+        <link rel="stylesheet" type="text/css" href="../../src/css/wui_main.css"/>
+        <style>
+            .redBkg {
+                background-color:red;
+            }
+            .blueBkg {
+                background-color:blue;
+            }
+            .yellowText {
+                color:yellow;
+            }
+        </style>
+        <script src="../../src/js/wui_namespace.js">
+        </script>
+        <script src="../../src/js/controls/wui_control.js">
+        </script>
+        <script>
+            var scroll = function() {
+                setTimeout(scrollTo, 0, 0 ,1);
+            };
+            window.addEventListener('load', scroll, false);
 
-    var standardControlClick = wui.controls.control();
-    standardControlClick.getElement().innerHTML = "Control "+ standardControlClick.getControlNumber() +" with click";
-    standardControlClick.setOnClick(function(){alert('clicked');});
-  
-    var standardControlToggle = wui.controls.control();
-    standardControlToggle.getElement().innerHTML = "Control "+ standardControlToggle.getControlNumber() +" with toggle control " + standardControlClick.getControlNumber();
-    standardControlToggle.setOnClick(function(){standardControlClick.toggle();});
-    
-    var standardControlCssRed = wui.controls.control();
-    standardControlCssRed.getElement().innerHTML = "Control "+ standardControlCssRed.getControlNumber() +" add redBkg to control " + standardControlClick.getControlNumber();
-    standardControlCssRed.setOnClick(function(){
-      standardControlClick.css.removeClass("blueBkg");
-      standardControlClick.css.addClass("redBkg");
-    });
-    
-    var standardControlCssBlue = wui.controls.control();
-    standardControlCssBlue.getElement().innerHTML = "Control "+ standardControlCssBlue.getControlNumber() +" add blueBkg to control " + standardControlClick.getControlNumber();
-    standardControlCssBlue.setOnClick(function(){
-      standardControlClick.css.removeClass("redBkg");
-      standardControlClick.css.addClass("blueBkg");
-    });
-    
-    var standardControlCssBlue = wui.controls.control();
-    standardControlCssBlue.getElement().innerHTML = "Control "+ standardControlCssBlue.getControlNumber() +" add blueBkg to control " + standardControlClick.getControlNumber();
-    standardControlCssBlue.setOnClick(function(){
-      standardControlClick.css.removeClass("redBkg");
-      standardControlClick.css.addClass("blueBkg");
-    });
-    
-    var standardControlCssYellowTxt = wui.controls.control();
-    standardControlCssYellowTxt.getElement().innerHTML = "Control "+ standardControlCssBlue.getControlNumber() +" add YellowTxt to control " + standardControlClick.getControlNumber();
-    standardControlCssYellowTxt.setOnClick(function(){
-      standardControlClick.css.addClass("yellowText");
-    });
-    
-    body.appendChild(standardControlClick.getElement());
-    body.appendChild(standardControlToggle.getElement());
-    body.appendChild(standardControlCssRed.getElement());
-    body.appendChild(standardControlCssBlue.getElement());  
-    body.appendChild(standardControlCssYellowTxt.getElement());       
-  }, false);
-  
- 
-  </script>
-</head>
-<body>
-  
-</body>
+            // Load controls when DOM content is ready.
+            document.addEventListener('DOMContentLoaded', function() {
+
+                var body = document.getElementsByTagName('body')[0];
+
+                var standardControlClick = wui.controls.control();
+                standardControlClick.getDomElement().innerHTML = "Control "+ standardControlClick.getControlNumber() +" with click";
+                standardControlClick.setOnClick( function() {
+                    alert('clicked');
+                });
+                var standardControlToggle = wui.controls.control();
+                standardControlToggle.getDomElement().innerHTML = "Control "+ standardControlToggle.getControlNumber() +" with toggle control " + standardControlClick.getControlNumber();
+                standardControlToggle.setOnClick( function() {
+                    standardControlClick.toggle();
+                });
+                var standardControlCssRed = wui.controls.control();
+                standardControlCssRed.getDomElement().innerHTML = "Control "+ standardControlCssRed.getControlNumber() +" add redBkg to control " + standardControlClick.getControlNumber();
+                standardControlCssRed.setOnClick( function() {
+                    standardControlClick.css.removeClass("blueBkg");
+                    standardControlClick.css.addClass("redBkg");
+                });
+                var standardControlCssBlue = wui.controls.control();
+                standardControlCssBlue.getDomElement().innerHTML = "Control "+ standardControlCssBlue.getControlNumber() +" add blueBkg to control " + standardControlClick.getControlNumber();
+                standardControlCssBlue.setOnClick( function() {
+                    standardControlClick.css.removeClass("redBkg");
+                    standardControlClick.css.addClass("blueBkg");
+                });
+                var standardControlCssBlue = wui.controls.control();
+                standardControlCssBlue.getDomElement().innerHTML = "Control "+ standardControlCssBlue.getControlNumber() +" add blueBkg to control " + standardControlClick.getControlNumber();
+                standardControlCssBlue.setOnClick( function() {
+                    standardControlClick.css.removeClass("redBkg");
+                    standardControlClick.css.addClass("blueBkg");
+                });
+                var standardControlCssYellowTxt = wui.controls.control();
+                standardControlCssYellowTxt.getDomElement().innerHTML = "Control "+ standardControlCssBlue.getControlNumber() +" add YellowTxt to control " + standardControlClick.getControlNumber();
+                standardControlCssYellowTxt.setOnClick( function() {
+                    standardControlClick.css.addClass("yellowText");
+                });
+                body.appendChild(standardControlClick.getDomElement());
+                body.appendChild(standardControlToggle.getDomElement());
+                body.appendChild(standardControlCssRed.getDomElement());
+                body.appendChild(standardControlCssBlue.getDomElement());
+                body.appendChild(standardControlCssYellowTxt.getDomElement());
+            }, false);
+
+        </script>
+    </head>
+    <body>
+
+    </body>
 </html>
