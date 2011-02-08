@@ -1,0 +1,14 @@
+# Set the source directory
+srcdir = ../src/css/iPhone/
+
+# Create the list of modules
+modules = ../license.txt ${srcdir}wui.css ${srcdir}wui_controls_lists_items_arrow.css ${srcdir}wui_controls_lists_standard.css ${srcdir}wui_controls_lists_rounded.css ${srcdir}wui_controls_titleBar.css ${srcdir}wui_controls_menu_menuItem.css ${srcdir}wui_controls_menu_menuBar.css
+
+all: ../wui_v0.1.css ../wui_mini_v0.1.css
+
+../wui_v0.1.css: ${modules}
+	cat > $@ $^
+  
+../wui_mini_v0.1.css: ../wui_v0.1.css
+	java -jar yuicompressor-2.4.2.jar -o  $@ $^ --charset utf-8
+	

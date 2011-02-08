@@ -1,0 +1,153 @@
+/******************************************************************
+Copyright (c) 2011 Tom Blackmore
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. The name of the author may not be used to endorse or promote products
+   derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+********************************************************************/
+/* Positioning */
+html{height:100%; }
+body{height:100%;  margin:0; padding:0;}
+
+.wui_position_hbox{display:-webkit-box !important;-webkit-box-orient:horizontal;}
+.wui_position_vbox{display:-webkit-box !important;-webkit-box-orient:vertical;}
+.wui_position_flex{-webkit-box-flex:1;}
+
+.wui_position_fullscreen{height:100%;}
+
+/* Style */
+body{font-family: Arial,"MS Trebuchet",sans-serif;}
+
+/* Event stuff */
+ * { -webkit-touch-callout: none; -webkit-user-select: none;}.wui_controls_lists_items_arrow_icon{
+  background: url(img/all.png) -48px -50px no-repeat;
+  width: 27px;
+  height: 30px;
+}
+/*Note to self must tidy this one up a little*/
+ul.wui_controls_lists_standard {
+    -webkit-user-select: auto;
+    list-style: none;
+    margin: -5px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+ 
+ .wui_controls_lists_standard > li {
+ 	background-color: #FFFFFF;
+    line-height: 28px;
+    border-top: 1px solid #D0D0D0;
+    color: #222222;
+    display: block;
+    margin-left:5px;
+    margin-bottom: -1px;
+    padding: 9px 12px ;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0px 1px 0px #fff;
+    -webkit-tap-highlight-color: #333;
+ }
+ul.wui_controls_lists_rounded {list-style: none;
+    margin: 5px;
+    padding: 5px;
+}
+
+.wui_controls_lists_rounded li:first-child{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+}
+
+.wui_controls_lists_rounded li:last-child{
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+
+/* A rounded menu */
+/*
+ul.roundedMenu {
+    
+
+ul.roundedMenu .arrowLeft{
+    margin: 5px;
+}
+
+li{
+  background-color: #FFFFFF;
+   line-height: 28px;
+    border-top: 1px solid #D0D0D0;
+    color: #222222;
+    display: block;
+    margin-left:5px;
+    margin-bottom: -1px;
+    padding: 9px 12px ;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0px 1px 0px #fff;
+    -webkit-tap-highlight-color: #333;
+}
+
+.roundedMenu li:first-child{
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+}
+
+.roundedMenu li:last-child{
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+
+.roundedMenu li:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+ }
+ 
+.leftArrow{
+  background: url(../img/all.png) -48px -50px no-repeat;
+  width: 27px;
+  height: 30px;
+}*//* positioning */
+.wui_control_titleBar{height:42px;}
+.wui_control_titleBar_leftContainer .wui_control_titleBar_rightContainer{width:100px; margin:7px; padding:10px 0;}
+.wui_control_titleBar_title{width:100%; margin:0 auto;padding:10px 0;text-align:center;}
+
+/* style */
+.wui_control_titleBar{background-image:-webkit-gradient(linear,left top,left bottom,from(#ccc),to(#999));border-bottom:1px solid #666;} 
+.wui_control_titleBar_title{text-shadow:0px 1px 0px #FFF; font:bold 20px Arial,"MS Trebuchet",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+ /* Positioning */
+.wui_control_menuItem{display:block;height:1.2em;width:1px;padding:26px 0 .4em 0;margin:.3em;}
+.wui_control_menuItem_icon{height:26px;margin-top:-26px;}
+/* Style */
+.wui_control_menuItem{font-size:.8em;color:#808184;text-decoration:none;}
+.wui_control_menuItem_icon{font:bold 24px/26px inherit;text-align:center;text-shadow:rgba(255,255,255,0.3) 1px 1px 0px;}
+.wui_control_menuItem_active{-webkit-border-radius:.4em;color:#ddd; background:-webkit-gradient(linear,0% 0%,0% 100%,from(#777),to(#222),color-stop(.5,#444),color-stop(.5,#363636));}
+/* Positioning */
+.wui_control_menuBar{}
+/* Style */
+.wui_control_menuBar{background-image:-webkit-gradient(linear,0% 0%,0% 100%,from(#333),to(#000000),color-stop(.5,#222),color-stop(.5,#161616)); border-top:1px solid #333;text-align:center;}*/
+
