@@ -9,7 +9,7 @@
  *  lib/iscroll/iscroll-3.7.1.js
  *
  *  wui.css
- *  target/controls/wui_panel.css
+ *  wui_controls_panels_panel.css
  */
 wui.controls.panels.scroll = function() {
     var that = wui.controls.control();

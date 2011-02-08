@@ -6,7 +6,7 @@
  *  wui_controls_control.js
  * 
  *  wui.css
- *  cotrols/target/wui_titlebar.css
+ *  wui_controls_titlebar.css
  */
 wui.controls.titleBar = function() {
     var that = wui.controls.control("header");

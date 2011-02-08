@@ -7,7 +7,6 @@
  *  wui_controls_panels.js
  * 
  *  wui.css
- *  target/controls/wui_panel.css
  */
 wui.controls.panels.standard = function() {
     var that = wui.controls.control();

@@ -5,7 +5,7 @@
  *  wui_controls.js
  *  wui_controls_menu.js
  * 
- *  wui_menuBar.css
+ *  wui_controls_menu_menuBar.css
  */
 wui.controls.menu.menuBar = function() {
     var that = wui.controls.control("nav");

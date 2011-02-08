@@ -1,3 +1,12 @@
+ /*
+ * Create a menuItem to load in a menuBar
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_menu.js
+ * 
+ *  wui_controls_menu_menuItem.css
+ */
 wui.controls.menu.menuItem = function() {
     var that = wui.controls.control("span");
     that.css.addClass("wui_position_flex");
