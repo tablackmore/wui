@@ -24,6 +24,9 @@ wui.controls.menu.menuItem = function() {
     that.setPanel = function(panel) {
         panelControl = panel;
     };
+    that.getPanel = function(){
+    	return panelControl;
+    };
     that.showPanel = function() {
         if (panelControl) {
             panelControl.show();

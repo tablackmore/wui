@@ -40,13 +40,13 @@
                 };
                 
                 var panel2 = wui.controls.panels.scroll();
-                var listFull2 = wui.controls.lists.fullScreen();
-                panel2.appendControl(listFull2);
-                var i;
-                for (i = 1; i <= 100; i++){
-                  listFull2.items.add(wui.controls.lists.items.arrow("standard list " +i));
-                };
+                
                 var panel3 = wui.controls.panels.scroll();
+                var listFull3 = wui.controls.lists.fullScreen();
+                panel3.appendControl(listFull3);
+                for (i = 1; i <= 100; i++){
+                  listFull3.items.add(wui.controls.lists.items.arrow("standard list " +i));
+                };
                 
                 var menuItem1 = wui.controls.menu.menuItem();
                 menuItem1.setText("Full");
@@ -82,7 +82,7 @@
                 /* Add app to page */
                 var body = document.getElementsByTagName('body')[0];
                 body.appendChild(app.getDomElement());
-                panel2.scroll.refresh();
+                menuBar.getActive().getPanel().scroll.refresh();
             }, false);
 
         </script>

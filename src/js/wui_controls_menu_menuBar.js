@@ -13,12 +13,18 @@ wui.controls.menu.menuBar = function() {
     var i;
     that.css.addClass("wui_position_hbox");
     that.css.addClass("wui_control_menuBar");
+    var activeItem;
 
     that.setActive = function(menuItem) {
         for (i = 0; i < items.length; i++) {
             items[i].deselect();
         }
         menuItem.select();
+        activeItem = menuItem;
+    };
+    
+    that.getActive = function(){
+    	return activeItem;
     };
     
     that.items = (function() {
