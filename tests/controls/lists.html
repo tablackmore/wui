@@ -2,10 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Menu - Test</title>
+        <title>List - Test</title>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_menu_menuBar.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_menu_menuItem.css"/>
+        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_lists_fullScreen.css"/>
+        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_lists_items_arrow.css"/>
         <script src="../../src/js/wui.js"></script>
         <script src="../../src/js/wui_controls.js"></script>
         <script src="../../src/js/wui_controls_control.js"></script>
@@ -16,6 +18,11 @@
         <script src="../../src/js/wui_controls_menu.js"></script>
         <script src="../../src/js/wui_controls_menu_menuBar.js"></script>
         <script src="../../src/js/wui_controls_menu_menuItem.js"></script>
+        <script src="../../src/js/wui_controls_lists.js"></script>
+        <script src="../../src/js/wui_controls_lists_items.js"></script>
+        <script src="../../src/js/wui_controls_lists_items_standard.js"></script>
+        <script src="../../src/js/wui_controls_lists_items_arrow.js"></script>
+        <script src="../../src/js/wui_controls_lists_fullScreen.js"></script>
         <script src="../../lib/iscroll/iscroll-3.7.1.js"></script>
         <!--<script src="../../wui_mini_v0.1.js"></script>-->
         
@@ -24,29 +31,37 @@
             document.addEventListener('DOMContentLoaded', function() {
                 var app = wui.controls.app();
                 
-                var panel1 = wui.controls.panels.standard();
-                panel1.setText("Panel 1");
+                var panel1 = wui.controls.panels.scroll();
+                var listFull1 = wui.controls.lists.fullScreen();
+                panel1.appendControl(listFull1);
+                var i;
+                for (i = 1; i <= 100; i++){
+                  listFull1.items.add(wui.controls.lists.items.standard("standard list " +i));
+                };
                 
-                var panel2 = wui.controls.panels.standard();
-                panel2.setText("Panel 2");
-                
+                var panel2 = wui.controls.panels.scroll();
+                var listFull2 = wui.controls.lists.fullScreen();
+                panel2.appendControl(listFull2);
+                var i;
+                for (i = 1; i <= 100; i++){
+                  listFull2.items.add(wui.controls.lists.items.arrow("standard list " +i));
+                };
                 var panel3 = wui.controls.panels.scroll();
-                panel3.setText("Panel 3");
                 
                 var menuItem1 = wui.controls.menu.menuItem();
-                menuItem1.setText("one");
+                menuItem1.setText("Full");
                 menuItem1.setPanel(panel1);
                 menuItem1.setIconControl("1");
                 menuItem1.setSelectedIconControl("<strong>1</strong>");
                 
                 var menuItem2 = wui.controls.menu.menuItem();
-                menuItem2.setText("two");
+                menuItem2.setText("Rounded");
                 menuItem2.setPanel(panel2);
                 menuItem2.setIconControl("2");
                 menuItem2.setSelectedIconControl("<strong>2</strong>");
                  
                 var menuItem3 = wui.controls.menu.menuItem();
-                menuItem3.setText("scroll");
+                menuItem3.setText("FullArrow");
                 menuItem3.setPanel(panel3);
                 menuItem3.setIconControl("3");
                 menuItem3.setSelectedIconControl("<strong>3</strong>");
@@ -57,6 +72,7 @@
                 menuBar.items.add(menuItem3);
                 menuBar.setActive(menuItem2);
                 
+                
                 /* Add controls to app */
                 app.appendControl(panel1);
                 app.appendControl(panel2);
@@ -66,6 +82,7 @@
                 /* Add app to page */
                 var body = document.getElementsByTagName('body')[0];
                 body.appendChild(app.getDomElement());
+                panel2.scroll.refresh();
             }, false);
 
         </script>

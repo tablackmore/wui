@@ -30,6 +30,7 @@ wui.controls.panels.scroll = function() {
     };
     that.appendControl= function(control) {
         scroller.getDomElement().appendChild(control.getDomElement());
+        that.scroll.refresh();
     };
     that.show = function() {
         that.getDomElement().style.display = 'block';

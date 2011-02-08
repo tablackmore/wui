@@ -21,7 +21,7 @@ wui.controls.menu.menuBar = function() {
         menuItem.select();
     };
     
-    that.menuItems = (function() {
+    that.items = (function() {
         var add = function(menuItem) {
             menuItem.setOnClick( function() {
                 that.setActive(menuItem);
