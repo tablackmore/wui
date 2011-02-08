@@ -3,10 +3,14 @@
     <head>
         <meta charset="utf-8" />
         <title>List - Test</title>
+        <style>
+        	.greyBkg{background-color:#666666;}
+        </style>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_menu_menuBar.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_menu_menuItem.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_lists_standard.css"/>
+        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_lists_rounded.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_lists_items_arrow.css"/>
         <script src="../../src/js/wui.js"></script>
         <script src="../../src/js/wui_controls.js"></script>
@@ -23,6 +27,7 @@
         <script src="../../src/js/wui_controls_lists_items_standard.js"></script>
         <script src="../../src/js/wui_controls_lists_items_arrow.js"></script>
         <script src="../../src/js/wui_controls_lists_standard.js"></script>
+        <script src="../../src/js/wui_controls_lists_rounded.js"></script>
         <script src="../../lib/iscroll/iscroll-3.7.1.js"></script>
         <!--<script src="../../wui_mini_v0.1.js"></script>-->
         
@@ -40,12 +45,23 @@
                 };
                 
                 var panel2 = wui.controls.panels.scroll();
+                panel2.css.addClass("greyBkg");
+                var listRounded1 = wui.controls.lists.rounded();
+                var listRounded2 = wui.controls.lists.rounded();
+                panel2.appendControl(listRounded1);
+                panel2.appendControl(listRounded2);
+                for (i = 1; i <= 5; i++){
+                  listRounded1.items.add(wui.controls.lists.items.arrow("arrow list " +i));
+                };
+                for (i = 1; i <= 7; i++){
+                  listRounded2.items.add(wui.controls.lists.items.standard("standard list " +i));
+                };
                 
                 var panel3 = wui.controls.panels.scroll();
                 var listFull3 = wui.controls.lists.standard();
                 panel3.appendControl(listFull3);
                 for (i = 1; i <= 100; i++){
-                  listFull3.items.add(wui.controls.lists.items.arrow("standard list " +i));
+                  listFull3.items.add(wui.controls.lists.items.arrow("arrow list " +i));
                 };
                 
                 var menuItem1 = wui.controls.menu.menuItem();

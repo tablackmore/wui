@@ -9,6 +9,6 @@
  */
 wui.controls.lists.rounded = function(){
 	var that = wui.controls.lists.standard();
-    that.setClass("wui_controls_lists_rounded");
+    that.css.addClass("wui_controls_lists_rounded");
     return that;
 };
