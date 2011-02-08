@@ -2,7 +2,7 @@
 srcdir = ../src/js/
 
 # Create the list of modules
-modules =   ${srcdir}wui.js ${srcdir}wui_controls.js ${srcdir}wui_controls_control.js ${srcdir}wui_controls_app.js ${srcdir}wui_controls_panel.js ${srcdir}wui_controls_titleBar.js ${srcdir}wui_controls_menu.js ${srcdir}wui_controls_menu_menuItem.js ${srcdir}wui_controls_menu_menuBar.js
+modules = ../license.txt ${srcdir}wui.js ${srcdir}wui_controls.js ${srcdir}wui_controls_control.js ${srcdir}wui_controls_app.js ${srcdir}wui_controls_panels.js ${srcdir}wui_controls_panels_standard.js ${srcdir}wui_controls_panels_scroll.js ${srcdir}wui_controls_titleBar.js ${srcdir}wui_controls_menu.js ${srcdir}wui_controls_menu_menuItem.js ${srcdir}wui_controls_menu_menuBar.js
 
 all: ../wui_v0.1.js ../wui_mini_v0.1.js
 
@@ -11,3 +11,4 @@ all: ../wui_v0.1.js ../wui_mini_v0.1.js
   
 ../wui_mini_v0.1.js: ../wui_v0.1.js
 	java -jar yuicompressor-2.4.2.jar -o  $@ $^ --charset utf-8
+	

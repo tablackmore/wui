@@ -1,3 +1,30 @@
+/******************************************************************
+Copyright (c) 2011 Tom Blackmore
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. The name of the author may not be used to endorse or promote products
+   derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+********************************************************************/
 /*
  * Namespace for all html base controls
  */
@@ -120,34 +147,47 @@ wui.controls.control = ( function() {
             setId: setId
         };
     };
-}());/*
- * A basic titlebar with three containers.
+}());/**
+ * @projectDescription  A basic titlebar with three containers.
+ * @author Tom Blackmore
+ * @version 0.1
+ * 
  * Dependencies:
  *  wui.js
  *  wui_controls.js
  *  wui_controls_control.js
  * 
  *  wui.css
+ * 
  */
-wui.controls.app = function() {
+wui.controls.app = function(){
     var that = wui.controls.control();
     that.css.addClass("wui_position_vbox");
     that.css.addClass("wui_position_fullscreen");
-    that.show = function() {
+    that.show = function(){
         that.getDomElement().style.display = '-webkit-box';
     };
     return that;
-};/*
- * A basic titlebar with three containers.
+};
+
+ /*
+ * This is the panels namespace
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ */
+ wui.controls.panels = {};/*
+ * A basic panel.
  * Dependencies:
  *  wui.js
  *  wui_controls.js
  *  wui_controls_control.js
+ *  wui_controls_panels.js
  * 
  *  wui.css
  *  target/controls/wui_panel.css
  */
-wui.controls.panel = function() {
+wui.controls.panels.standard = function() {
     var that = wui.controls.control();
     that.css.addClass("wui_controls_panel");
     that.css.addClass("wui_position_vbox");
@@ -157,6 +197,58 @@ wui.controls.panel = function() {
     };
     that.show = function() {
         that.getDomElement().style.display = '-webkit-box';
+    };
+    return that;
+};/*
+ * A basic scroll panel.
+ * Dependencies:
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_control.js
+ *  wui_controls_panels.js
+ *  wui_controls_panels_standard.js
+ *  lib/iscroll/iscroll-3.7.1.js
+ *
+ *  wui.css
+ *  target/controls/wui_panel.css
+ */
+wui.controls.panels.scroll = function() {
+    var that = wui.controls.control();
+    var id = "scroll__" + that.getControlNumber();
+    that.css.addClass("wui_position_flex");
+    that.setId(id);
+ 
+    var scroller =  wui.controls.panels.standard();
+    that.appendControl(scroller);
+	var mainDiv = that.getDomElement();
+    that.scroll = new iScroll(scroller.getDomElement(), {
+        desktopCompatibility: true
+    });
+
+    that.setText = function(text) {
+        scroller.setText("<ul><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>"+text+"</li></ul>");
+        that.scroll.refresh();
+    };
+    that.appendControl= function(control) {
+        scroller.getDomElement().appendChild(control.getDomElement());
+    };
+    that.show = function() {
+        that.getDomElement().style.display = 'block';
+        that.scroll.refresh();
+    };
+    that.scroll.refresh();
+
+	// Prevent other parts of the page from being draggable
+    document.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+    },
+    false);
+
+    that.clear = function() {
+        scroller.getDomElement().innerHTML = "";
+    };
+    that.getDomElement = function() {
+        return mainDiv;
     };
     return that;
 };/*
