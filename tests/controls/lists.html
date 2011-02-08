@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_menu_menuBar.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_menu_menuItem.css"/>
-        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_lists_fullScreen.css"/>
+        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_lists_standard.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_lists_items_arrow.css"/>
         <script src="../../src/js/wui.js"></script>
         <script src="../../src/js/wui_controls.js"></script>
@@ -22,7 +22,7 @@
         <script src="../../src/js/wui_controls_lists_items.js"></script>
         <script src="../../src/js/wui_controls_lists_items_standard.js"></script>
         <script src="../../src/js/wui_controls_lists_items_arrow.js"></script>
-        <script src="../../src/js/wui_controls_lists_fullScreen.js"></script>
+        <script src="../../src/js/wui_controls_lists_standard.js"></script>
         <script src="../../lib/iscroll/iscroll-3.7.1.js"></script>
         <!--<script src="../../wui_mini_v0.1.js"></script>-->
         
@@ -32,7 +32,7 @@
                 var app = wui.controls.app();
                 
                 var panel1 = wui.controls.panels.scroll();
-                var listFull1 = wui.controls.lists.fullScreen();
+                var listFull1 = wui.controls.lists.standard();
                 panel1.appendControl(listFull1);
                 var i;
                 for (i = 1; i <= 100; i++){
@@ -42,7 +42,7 @@
                 var panel2 = wui.controls.panels.scroll();
                 
                 var panel3 = wui.controls.panels.scroll();
-                var listFull3 = wui.controls.lists.fullScreen();
+                var listFull3 = wui.controls.lists.standard();
                 panel3.appendControl(listFull3);
                 for (i = 1; i <= 100; i++){
                   listFull3.items.add(wui.controls.lists.items.arrow("standard list " +i));

@@ -4,6 +4,8 @@
  *  wui.js
  *  wui_controls.js
  *  wui_controls_lists.js
+ * 
+ *  wui_controls_lists_standard.css
  */
 wui.controls.lists.items.standard = function(text) {
     var that = wui.controls.control("li");

@@ -1,5 +1,5 @@
 /*Note to self must tidy this one up a little*/
-ul.wui_controls_lists_fullScreen {
+ul.wui_controls_lists_standard {
     -webkit-user-select: auto;
     list-style: none;
     margin: -5px;
@@ -8,7 +8,7 @@ ul.wui_controls_lists_fullScreen {
 }
 
  
- .wui_controls_lists_fullScreen > li {
+ .wui_controls_lists_standard > li {
  	background-color: #FFFFFF;
     line-height: 28px;
     border-top: 1px solid #D0D0D0;

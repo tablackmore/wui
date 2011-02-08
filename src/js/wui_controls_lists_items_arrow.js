@@ -4,7 +4,7 @@
  *  wui.js
  *  wui_controls.js
  *  wui_controls_lists.js
- *  wui_controls_lists_listItems.js
+ *  wui_controls_lists_items.js
  */
 wui.controls.lists.items.arrow = function(text) {
     var that = wui.controls.control("li");
@@ -19,7 +19,6 @@ wui.controls.lists.items.arrow = function(text) {
     if (typeof text !== "undefined") {
         that.setText(text);
     }
-    //var mainElement = that.getDomElement();
 	that.appendControl(textDiv);
     that.appendControl(imgElement);
     return that;
