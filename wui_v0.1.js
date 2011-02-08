@@ -185,7 +185,6 @@ wui.controls.app = function(){
  *  wui_controls_panels.js
  * 
  *  wui.css
- *  target/controls/wui_panel.css
  */
 wui.controls.panels.standard = function() {
     var that = wui.controls.control();
@@ -210,7 +209,7 @@ wui.controls.panels.standard = function() {
  *  lib/iscroll/iscroll-3.7.1.js
  *
  *  wui.css
- *  target/controls/wui_panel.css
+ *  wui_controls_panels_panel.css
  */
 wui.controls.panels.scroll = function() {
     var that = wui.controls.control();
@@ -231,6 +230,7 @@ wui.controls.panels.scroll = function() {
     };
     that.appendControl= function(control) {
         scroller.getDomElement().appendChild(control.getDomElement());
+        that.scroll.refresh();
     };
     that.show = function() {
         that.getDomElement().style.display = 'block';
@@ -251,7 +251,102 @@ wui.controls.panels.scroll = function() {
         return mainDiv;
     };
     return that;
-};/*
+}; /*
+ * This is the lists namespace
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ */
+ wui.controls.lists = {}; /*
+ * This is the list items namespace
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_lists.js
+ */
+wui.controls.lists.items = {};
+/*
+ * This is the standard listItem
+ * Dependencies:
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_lists.js
+ * 
+ *  wui_controls_lists_standard.css
+ */
+wui.controls.lists.items.standard = function(text) {
+    var that = wui.controls.control("li");
+    that.setText = function(text) {
+        that.getDomElement().innerHTML = text;
+    };
+    if (typeof text !== "undefined") {
+        that.setText(text);
+    }
+    return that;
+}; /*
+ * This is the standard listItem
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_lists.js
+ *  wui_controls_lists_items.js
+ */
+wui.controls.lists.items.arrow = function(text) {
+    var that = wui.controls.control("li");
+    that.css.addClass("wui_position_hbox");
+    var textDiv = wui.controls.control("div");
+    textDiv.css.addClass("wui_position_flex");
+    var imgElement = wui.controls.control("div");
+    imgElement.css.addClass("wui_controls_lists_items_arrow_icon");
+    that.setText = function(text) {
+        textDiv.getDomElement().innerHTML = text;
+    };
+    if (typeof text !== "undefined") {
+        that.setText(text);
+    }
+	that.appendControl(textDiv);
+    that.appendControl(imgElement);
+    return that;
+};
+ /*
+ * This is a standard list
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_lists.js
+ */
+wui.controls.lists.standard = function(){
+	 var that = wui.controls.control("ul");
+     that.css.addClass("wui_controls_lists_standard");
+     that.items =(function() {
+        var add = function(listItem) {
+     		that.appendControl(listItem);
+     	};
+     	return {
+     		add: add
+     	}
+     }());
+     that.clear = function(){
+        that.getDomElement().innerHTML = "";
+     };
+     return that;
+};
+
+ /*
+ * This is a rounded list
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_lists.js
+ * 
+ *  wui_controls_lists_rounded.css
+ */
+wui.controls.lists.rounded = function(){
+	var that = wui.controls.lists.standard();
+    that.css.addClass("wui_controls_lists_rounded");
+    return that;
+};
+/*
  * A basic titlebar with three containers.
  * Dependencies:
  *  wui.js
@@ -259,7 +354,7 @@ wui.controls.panels.scroll = function() {
  *  wui_controls_control.js
  * 
  *  wui.css
- *  cotrols/target/wui_titlebar.css
+ *  wui_controls_titlebar.css
  */
 wui.controls.titleBar = function() {
     var that = wui.controls.control("header");
@@ -293,7 +388,16 @@ wui.controls.titleBar = function() {
  *  wui.js
  *  wui_controls.js
  */
- wui.controls.menu = {};wui.controls.menu.menuItem = function() {
+ wui.controls.menu = {}; /*
+ * Create a menuItem to load in a menuBar
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_menu.js
+ * 
+ *  wui_controls_menu_menuItem.css
+ */
+wui.controls.menu.menuItem = function() {
     var that = wui.controls.control("span");
     that.css.addClass("wui_position_flex");
     that.css.addClass("wui_control_menuItem");
@@ -309,6 +413,9 @@ wui.controls.titleBar = function() {
     };
     that.setPanel = function(panel) {
         panelControl = panel;
+    };
+    that.getPanel = function(){
+    	return panelControl;
     };
     that.showPanel = function() {
         if (panelControl) {
@@ -357,7 +464,7 @@ wui.controls.titleBar = function() {
  *  wui_controls.js
  *  wui_controls_menu.js
  * 
- *  wui_menuBar.css
+ *  wui_controls_menu_menuBar.css
  */
 wui.controls.menu.menuBar = function() {
     var that = wui.controls.control("nav");
@@ -365,15 +472,21 @@ wui.controls.menu.menuBar = function() {
     var i;
     that.css.addClass("wui_position_hbox");
     that.css.addClass("wui_control_menuBar");
+    var activeItem;
 
     that.setActive = function(menuItem) {
         for (i = 0; i < items.length; i++) {
             items[i].deselect();
         }
         menuItem.select();
+        activeItem = menuItem;
     };
     
-    that.menuItems = (function() {
+    that.getActive = function(){
+    	return activeItem;
+    };
+    
+    that.items = (function() {
         var add = function(menuItem) {
             menuItem.setOnClick( function() {
                 that.setActive(menuItem);
