@@ -93,13 +93,6 @@ wui.controls.control = ( function() {
             clear: clear
           }
         }());
-        
-        var setWidth = function(width) {
-            mainElement.style.width = width;
-        };
-        var setHeight = function(height) {
-            mainElement.style.height = height;
-        };
         var setId = function(text) {
             mainElement.id = text;
         };
