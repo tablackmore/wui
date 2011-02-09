@@ -46,18 +46,18 @@ wui.controls.control = ( function() {
         var idNumber = count;
         count += 1;
         var elementName = type ? type: "div";
-        var mainDiv = document.createElement(elementName);
+        var mainElement = document.createElement(elementName);
 
         var show = function() {
-            mainDiv.style.display = 'block';
+            mainElement.style.display = 'block';
         };
         
         var hide = function() {
-            mainDiv.style.display = 'none';
+            mainElement.style.display = 'none';
         };
         
         var toggle = function() {
-            if (mainDiv.style.display === 'none') {
+            if (mainElement.style.display === 'none') {
                 show();
             } else {
                 hide();
@@ -69,7 +69,13 @@ wui.controls.control = ( function() {
         };
         
         var setOnClick = function(fn) {
-            mainDiv.onclick = fn;
+            mainElement.onclick = fn;
+        };
+        
+        var click = function(){
+            var ev = document.createEvent('MouseEvents');
+            ev.initEvent('click', true, true);
+            mainElement.dispatchEvent(ev);
         };
         
         var css = (function(){
@@ -81,7 +87,7 @@ wui.controls.control = ( function() {
             for(i=0; i < classes.length; i++){
               result += classes[i] + " ";
             }
-            mainDiv.className = result;
+            mainElement.className = result;
           };
           
           var addClass = function(className){
@@ -112,26 +118,32 @@ wui.controls.control = ( function() {
             updateElement();
           };
           
+          var clear = function(className){
+            classes = [];
+            updateElement();
+          };
+          
           return {
             addClass: addClass,
             removeClass: removeClass,
+            clear: clear
           }
         }());
         
         var setWidth = function(width) {
-            mainDiv.style.width = width;
+            mainElement.style.width = width;
         };
         var setHeight = function(height) {
-            mainDiv.style.height = height;
+            mainElement.style.height = height;
         };
         var setId = function(text) {
-            mainDiv.id = text;
+            mainElement.id = text;
         };
         var getDomElement = function() {
-            return mainDiv;
+            return mainElement;
         };
         var appendControl = function(control) {
-            mainDiv.appendChild(control.getDomElement());
+            mainElement.appendChild(control.getDomElement());
         };
         return{
             getDomElement: getDomElement,
@@ -143,6 +155,7 @@ wui.controls.control = ( function() {
             setWidth: setWidth,
             setHeight: setHeight,
             setOnClick: setOnClick,
+            click: click,
             css: css,
             setId: setId
         };
@@ -499,5 +512,137 @@ wui.controls.menu.menuBar = function() {
         };
     }());
     
+    return that;
+}; /*
+ * This is the buttons namespace
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ */
+wui.controls.buttons = {}; /*
+ * A standard button
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_buttons.js
+ * 
+ *  wui_controls_buttons_standard.css
+ */
+wui_controls_buttons_standard = function() {
+    var that = wui.controls.control();
+    that.setText = function(text) {
+        that.getDomElement().innerHTML = text;
+    };
+    that.css.addClass("wui_controls_buttons_standard");
+    return that;
+}; /*
+ * A red button button
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_buttons.js
+ *  wui_controls_buttons_standard.js
+ * 
+ *  wui_controls_buttons_standard.css
+ *  wui_controls_buttons_red.css
+ */
+wui.controls.buttons.red = function() {
+    var that = wui.controls.buttons.standard();
+    that.css.addClass("wui_controls_buttons_red");
+    return that;
+}; /*
+ * An add button
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_buttons.js
+ *  wui_controls_buttons_standard.js
+ * 
+ *  wui_controls_buttons_add.css
+ */
+wui.controls.buttons.add = function() {
+    var that = wui.controls.buttons.standard();
+    that.css.clear();
+    that.css.addClass("wui_controls_buttons_add");
+    that.setText("+");
+    return that;
+}; /*
+ * A simple back button
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_buttons.js
+ *  wui_controls_buttons_standard.js
+ * 
+ *  wui_controls_buttons_back.css
+ */
+wui.controls.buttons.back = function() {
+    var that = wui.controls.buttons.standard();
+    that.css.clear();
+    that.css.addClass("wui_controls_buttons_back");
+    return that;
+};
+ /*
+ * A round grey lamp button
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_buttons.js
+ *  wui_controls_buttons_standard.js
+ * 
+ *  wui_controls_buttons_greyLamp.css
+ */
+wui.controls.buttons.greyLamp = function() {
+    var that = wui.controls.buttons.standard();
+    that.css.clear();
+    that.css.addClass("wui_controls_buttons_greyLamp");
+    return that;
+}; /*
+ * A round green lamp button
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_buttons.js
+ *  wui_controls_buttons_standard.js
+ *  wui_controls_buttons_greyLamp.js
+ * 
+ *  wui_controls_buttons_greyLamp.css
+ *  wui_controls_buttons_greenLamp.css
+ */
+wui.controls.buttons.greenLamp = function() {
+    var that = wui.controls.buttons.greyLamp();
+    that.css.addClass("wui_controls_buttons_greenLamp");
+    return that;
+}; /*
+ * A round orange lamp button
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_buttons.js
+ *  wui_controls_buttons_standard.js
+ *  wui_controls_buttons_greyLamp.js
+ * 
+ *  wui_controls_buttons_greyLamp.css
+ *  wui_controls_buttons_orangeLamp.css
+ */
+wui.controls.buttons.orangeLamp = function() {
+    var that = wui.controls.buttons.greyLamp();
+    that.css.addClass("wui_controls_buttons_orangeLamp");
+    return that;
+}; /*
+ * A round red lamp button
+ * Dependencies: 
+ *  wui.js
+ *  wui_controls.js
+ *  wui_controls_buttons.js
+ *  wui_controls_buttons_standard.js
+ *  wui_controls_buttons_greyLamp.js
+ * 
+ * 	wui_controls_buttons_greyLamp.css
+ *  wui_controls_buttons_redLamp.css
+ */
+wui.controls.buttons.redLamp = function() {
+    var that = wui.controls.buttons.greyLamp();
+    that.css.addClass("wui_controls_buttons_redLamp");
     return that;
 };

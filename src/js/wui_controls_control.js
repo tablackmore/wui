@@ -10,18 +10,18 @@ wui.controls.control = ( function() {
         var idNumber = count;
         count += 1;
         var elementName = type ? type: "div";
-        var mainDiv = document.createElement(elementName);
+        var mainElement = document.createElement(elementName);
 
         var show = function() {
-            mainDiv.style.display = 'block';
+            mainElement.style.display = 'block';
         };
         
         var hide = function() {
-            mainDiv.style.display = 'none';
+            mainElement.style.display = 'none';
         };
         
         var toggle = function() {
-            if (mainDiv.style.display === 'none') {
+            if (mainElement.style.display === 'none') {
                 show();
             } else {
                 hide();
@@ -33,7 +33,13 @@ wui.controls.control = ( function() {
         };
         
         var setOnClick = function(fn) {
-            mainDiv.onclick = fn;
+            mainElement.onclick = fn;
+        };
+        
+        var click = function(){
+            var ev = document.createEvent('MouseEvents');
+            ev.initEvent('click', true, true);
+            mainElement.dispatchEvent(ev);
         };
         
         var css = (function(){
@@ -45,7 +51,7 @@ wui.controls.control = ( function() {
             for(i=0; i < classes.length; i++){
               result += classes[i] + " ";
             }
-            mainDiv.className = result;
+            mainElement.className = result;
           };
           
           var addClass = function(className){
@@ -76,26 +82,32 @@ wui.controls.control = ( function() {
             updateElement();
           };
           
+          var clear = function(className){
+            classes = [];
+            updateElement();
+          };
+          
           return {
             addClass: addClass,
             removeClass: removeClass,
+            clear: clear
           }
         }());
         
         var setWidth = function(width) {
-            mainDiv.style.width = width;
+            mainElement.style.width = width;
         };
         var setHeight = function(height) {
-            mainDiv.style.height = height;
+            mainElement.style.height = height;
         };
         var setId = function(text) {
-            mainDiv.id = text;
+            mainElement.id = text;
         };
         var getDomElement = function() {
-            return mainDiv;
+            return mainElement;
         };
         var appendControl = function(control) {
-            mainDiv.appendChild(control.getDomElement());
+            mainElement.appendChild(control.getDomElement());
         };
         return{
             getDomElement: getDomElement,
@@ -107,6 +119,7 @@ wui.controls.control = ( function() {
             setWidth: setWidth,
             setHeight: setHeight,
             setOnClick: setOnClick,
+            click: click,
             css: css,
             setId: setId
         };

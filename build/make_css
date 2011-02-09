@@ -2,7 +2,7 @@
 srcdir = ../src/css/iPhone/
 
 # Create the list of modules
-modules = ../license.txt ${srcdir}wui.css ${srcdir}wui_controls_lists_items_arrow.css ${srcdir}wui_controls_lists_standard.css ${srcdir}wui_controls_lists_rounded.css ${srcdir}wui_controls_titleBar.css ${srcdir}wui_controls_menu_menuItem.css ${srcdir}wui_controls_menu_menuBar.css
+modules = ../license.txt ${srcdir}wui.css ${srcdir}wui_controls_lists_items_arrow.css ${srcdir}wui_controls_lists_standard.css ${srcdir}wui_controls_lists_rounded.css ${srcdir}wui_controls_titleBar.css ${srcdir}wui_controls_menu_menuItem.css ${srcdir}wui_controls_menu_menuBar.css ${srcdir}wui_controls_buttons_standard.css ${srcdir}wui_controls_buttons_red.css ${srcdir}wui_controls_buttons_add.css ${srcdir}wui_controls_buttons_back.css ${srcdir}wui_controls_buttons_greyLamp.css ${srcdir}wui_controls_buttons_greenLamp.css ${srcdir}wui_controls_buttons_orangeLamp.css ${srcdir}wui_controls_buttons_redLamp.css
 
 all: ../wui_v0.1.css ../wui_mini_v0.1.css
 
