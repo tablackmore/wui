@@ -25,7 +25,7 @@ wui.controls.panels.scroll = function() {
     });
 
     that.setText = function(text) {
-        scroller.setText("<ul><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>"+text+"</li></ul>");
+        scroller.setText(text);
         that.scroll.refresh();
     };
     that.appendControl= function(control) {

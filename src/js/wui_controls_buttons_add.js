@@ -13,5 +13,6 @@ wui.controls.buttons.add = function() {
     that.css.clear();
     that.css.addClass("wui_controls_buttons_add");
     that.setText("+");
+    that.setText = undefined;
     return that;
 };

@@ -238,7 +238,7 @@ wui.controls.panels.scroll = function() {
     });
 
     that.setText = function(text) {
-        scroller.setText("<ul><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>"+text+"</li></ul>");
+        scroller.setText(text);
         that.scroll.refresh();
     };
     that.appendControl= function(control) {
@@ -565,6 +565,7 @@ wui.controls.buttons.add = function() {
     that.css.clear();
     that.css.addClass("wui_controls_buttons_add");
     that.setText("+");
+    that.setText = undefined;
     return that;
 }; /*
  * A simple back button

@@ -3,9 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <title>Menu - Test</title>
-        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui.css"/>
+        <!--<link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui.css"/>
         <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_menu_menuBar.css"/>
-        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_menu_menuItem.css"/>
+        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_controls_menu_menuItem.css"/>-->
+        <link rel="stylesheet" type="text/css" href="../../src/css/iPhone/wui_mini_v0.1.css"/>
         <!--<script src="../../src/js/wui.js"></script>
         <script src="../../src/js/wui_controls.js"></script>
         <script src="../../src/js/wui_controls_control.js"></script>
@@ -16,7 +17,7 @@
         <script src="../../src/js/wui_controls_menu.js"></script>
         <script src="../../src/js/wui_controls_menu_menuBar.js"></script>
         <script src="../../src/js/wui_controls_menu_menuItem.js"></script>-->
-        <script src="../../wui_mini_v0.1.js"></script>
+        <script src="../../wui_v0.1.js"></script>
         
         <script>
             // Load controls when DOM content is ready.
@@ -61,6 +62,8 @@
                 app.appendControl(panel2);
                 app.appendControl(panel3);
                 app.appendControl(menuBar);
+                
+                panel1.hide();
                 
                 /* Add app to page */
                 var body = document.getElementsByTagName('body')[0];

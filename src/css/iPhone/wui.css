@@ -2,8 +2,8 @@
 html{height:100%; }
 body{height:100%;  margin:0; padding:0;}
 
-.wui_position_hbox{display:-webkit-box !important;-webkit-box-orient:horizontal;}
-.wui_position_vbox{display:-webkit-box !important;-webkit-box-orient:vertical;}
+.wui_position_hbox{display:-webkit-box;-webkit-box-orient:horizontal;}
+.wui_position_vbox{display:-webkit-box;-webkit-box-orient:vertical;}
 .wui_position_flex{-webkit-box-flex:1;}
 
 .wui_position_fullscreen{height:100%;}
