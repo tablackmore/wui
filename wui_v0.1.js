@@ -145,8 +145,6 @@ wui.controls.control = ( function() {
             show: show,
             hide: hide,
             toggle: toggle,
-            setWidth: setWidth,
-            setHeight: setHeight,
             setOnClick: setOnClick,
             click: click,
             css: css,
