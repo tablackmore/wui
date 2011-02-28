@@ -90,6 +90,23 @@ wui.controls.control = ( function() {
             mainElement.className = result;
           };
           
+          var toggleClass = function(className){
+            var i;
+            var exists = false;
+            for(i=0; i < classes.length; i++){
+              if(className === classes[i]){
+                exists = true;
+                break;
+              }
+            }
+            if(!exists){
+              addClass(className);
+            } else {
+              removeClass(className)
+            }
+          };
+          
+          
           var addClass = function(className){
             var i;
             var exists = false;
@@ -126,6 +143,7 @@ wui.controls.control = ( function() {
           return {
             addClass: addClass,
             removeClass: removeClass,
+            toggleClass: toggleClass,
             clear: clear
           }
         }());
