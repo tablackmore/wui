@@ -1,6 +1,5 @@
  /*
- * This is the menu namespace
- * Dependencies: 
+ *   Dependencies: 
  *  wui.js
  *  wui_controls.js
  */

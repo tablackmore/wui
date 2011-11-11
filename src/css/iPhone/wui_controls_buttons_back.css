@@ -4,7 +4,8 @@
     line-height:28px;
     color:white;
     text-shadow:rgba(0,0,0,0.6) 0px -1px 0px;
-    max-width:50px;
+    font-size:15px;
+    max-width:60px;
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;

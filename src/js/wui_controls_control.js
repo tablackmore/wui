@@ -1,9 +1,12 @@
 /*
+ * 
  * This is the very simple base object for building all other controls
  * Dependencies: 
  *  wui.js
  *  wui_controls.js
+ * 
  */
+ 
 wui.controls.control = ( function() {
     var count = 0;
     return function(type) {
@@ -11,15 +14,12 @@ wui.controls.control = ( function() {
         count += 1;
         var elementName = type ? type: "div";
         var mainElement = document.createElement(elementName);
-
         var show = function() {
             mainElement.style.display = 'block';
         };
-        
         var hide = function() {
             mainElement.style.display = 'none';
         };
-        
         var toggle = function() {
             if (mainElement.style.display === 'none') {
                 show();

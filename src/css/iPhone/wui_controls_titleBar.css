@@ -1,24 +1,24 @@
 /* positioning */
-.wui_control_titleBar {
+.wui_controls_titleBar {
     height:42px;
+    width:100%;
 }
-.wui_control_titleBar_leftContainer .wui_control_titleBar_rightContainer {
-    width:100px;
-    margin:7px;
-    padding:10px 0;
+.wui_controls_titleBar_leftContainer, .wui_controls_titleBar_rightContainer {
+    padding:7px;
 }
-.wui_control_titleBar_title {
+.wui_controls_titleBar_title {
     width:100%;
     margin:0 auto;
     padding:10px 0;
+    color:black;
     text-align:center;
 }
 /* style */
-.wui_control_titleBar {
+.wui_controls_titleBar {
     background-image:-webkit-gradient(linear,left top,left bottom,from(#ccc),to(#999));
     border-bottom:1px solid #666;
 }
-.wui_control_titleBar_title {
+.wui_controls_titleBar_title {
     text-shadow:0px 1px 0px #FFF;
     font:bold 20px Arial,"MS Trebuchet",sans-serif;
     white-space:nowrap;

@@ -14,11 +14,11 @@ wui.controls.titleBar = function() {
     that.rightContainer = wui.controls.control();
     that.leftContainer = wui.controls.control();
     var title = document.createElement("h1");
-    title.className = "wui_position_flex wui_control_titleBar_title";
+    title.className = "wui_position_flex wui_controls_titleBar_title";
     that.css.addClass("wui_position_hbox");
-    that.css.addClass("wui_control_titleBar");
-    that.rightContainer.css.addClass("wui_control_titleBar_rightContainer");
-    that.leftContainer.css.addClass("wui_control_titleBar_leftContainer");
+    that.css.addClass("wui_controls_titleBar");
+    that.rightContainer.css.addClass("wui_controls_titleBar_rightContainer");
+    that.leftContainer.css.addClass("wui_controls_titleBar_leftContainer");
     
     that.show = function() {
         that.getDomElement().style.display = "-webkit-box";

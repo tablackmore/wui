@@ -5,7 +5,6 @@
  *  wui_controls.js
  *  wui_controls_buttons.js
  *  wui_controls_buttons_standard.js
- * 
  *  wui_controls_buttons_add.css
  */
 wui.controls.buttons.add = function() {
