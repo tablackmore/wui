@@ -1,0 +1,13 @@
+.wui_control_progress {
+	z-index: 999;
+	background-color: rgba(0,0,0,.7);
+	position: absolute;
+	top: 42px;
+	left: 0;
+	color: white;
+	line-height: 50px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	width: 100% !important;
+}

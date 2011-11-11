@@ -1,0 +1,15 @@
+.wui_controls_toolBar {
+    height:42px;
+    width:100%;
+}
+.wui_controls_toolBar_container {
+    padding:7px;
+}
+.wui_controls_toolBar{
+    background-image: linear-gradient(bottom, rgb(204,204,204) 0%, rgb(227,227,227) 60%);
+	background-image: -o-linear-gradient(bottom, rgb(204,204,204) 0%, rgb(227,227,227) 60%);
+	background-image: -moz-linear-gradient(bottom, rgb(204,204,204) 0%, rgb(227,227,227) 60%);
+	background-image: -webkit-linear-gradient(bottom, rgb(204,204,204) 0%, rgb(227,227,227) 60%);
+	background-image: -ms-linear-gradient(bottom, rgb(204,204,204) 0%, rgb(227,227,227) 60%);
+    border-bottom:1px solid #666;
+}
