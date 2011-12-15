@@ -6,23 +6,29 @@
  *  wui_controls_control.js
  *  wui_controls_panels.js
  *  wui_controls_panels_standard.js
- *  lib/iscroll/iscroll-3.7.1.js
+ *  lib/iscroll/iscroll-lite.js
  *
  *  wui.css
  *  wui_controls_panels_panel.css
  */
 wui.controls.panels.scroll = function() {
-    var that = wui.controls.control();
+    var that = wui.controls.control();//wrapper
     var id = "scroll__" + that.getControlNumber();
     that.css.addClass("wui_position_flex");
     that.setId(id);
  
-    var scroller =  wui.controls.panels.standard();
+    var scroller =  wui.controls.panels.standard();//scroller
     that.appendControl(scroller);
 	var mainDiv = that.getDomElement();
-    that.scroll = new iScroll(scroller.getDomElement(), {
-        desktopCompatibility: true
-    });
+    that.scroll = new iScroll(that.getDomElement(),{
+		onBeforeScrollStart: function (e) {
+			var target = e.target;
+			while (target.nodeType != 1) target = target.parentNode;
+
+			if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA')
+				e.preventDefault();
+		}
+	});
 
     that.setText = function(text) {
         scroller.setText(text);
@@ -46,6 +52,7 @@ wui.controls.panels.scroll = function() {
 
     that.clear = function() {
         scroller.getDomElement().innerHTML = "";
+        that.scroll.refresh();
     };
     that.getDomElement = function() {
         return mainDiv;
