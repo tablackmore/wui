@@ -8,13 +8,36 @@ body {
     padding:0;
 }
 .wui_position_hbox {
-    display:-webkit-box;-webkit-box-orient:horizontal;
+    display:-webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-box;
+    display: box;
+    -webkit-box-orient:horizontal;
+    -moz-box-orient:horizontal;
+    -ms-box-orient:horizontal;
+    -o-box-orient:horizontal;
+    box-orient:horizontal;
 }
 .wui_position_vbox {
-    display:-webkit-box;-webkit-box-orient:vertical;
+    display:-webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-box;
+    display: box;
+    -webkit-box-orient:vertical;
+     -moz-box-orient:vertical;
+    -ms-box-orient:vertical;
+    -o-box-orient:vertical;
+    box-orient:vertical;
 }
 .wui_position_flex {
     -webkit-box-flex:1;
+     -moz-box-flex:1;
+      -ms-box-flex:1;
+       -o-box-flex:1;
+       box-flex:1;
+       
 }
 .wui_position_fullscreen {
     height:100%;
@@ -26,5 +49,9 @@ body {
 /* Event stuff */
 * {
     -webkit-touch-callout: none;
+     -moz-touch-callout: none;
+     -o-touch-callout: none;
+     -ms-touch-callout: none;
+      touch-callout: none;
     /*-webkit-user-select: none;*/
 }

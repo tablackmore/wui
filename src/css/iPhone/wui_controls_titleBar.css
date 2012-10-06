@@ -15,7 +15,12 @@
 }
 /* style */
 .wui_controls_titleBar {
-    background-image:-webkit-gradient(linear,left top,left bottom,from(#ccc),to(#999));
+    /*background-image:-webkit-gradient(linear,left top,left bottom,from(#ccc),to(#999));*/
+    background-image: linear-gradient(bottom, rgb(204,204,204) 0%, rgb(227,227,227) 60%);
+	background-image: -o-linear-gradient(bottom, rgb(204,204,204) 0%, rgb(227,227,227) 60%);
+	background-image: -moz-linear-gradient(bottom, rgb(204,204,204) 0%, rgb(227,227,227) 60%);
+	background-image: -webkit-linear-gradient(bottom, rgb(204,204,204) 0%, rgb(227,227,227) 60%);
+	background-image: -ms-linear-gradient(bottom, rgb(204,204,204) 0%, rgb(227,227,227) 60%);
     border-bottom:1px solid #666;
 }
 .wui_controls_titleBar_title {

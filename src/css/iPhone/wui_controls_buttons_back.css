@@ -11,5 +11,13 @@
     text-overflow:ellipsis;
     border-width:0 8px 0 14px;
     -webkit-border-image:url(img/backButton.png) 0 8 0 14;
+    -moz-border-image:url(img/backButton.png) 0 8 0 14;
+    -o-border-image:url(img/backButton.png) 0 8 0 14;
+    -ms-border-image:url(img/backButton.png) 0 8 0 14;
+    border-image:url(img/backButton.png) 0 8 0 14;
     -webkit-tap-highlight-color:rgba(100,100,100,0);
+    -moz-tap-highlight-color:rgba(100,100,100,0);
+    -ms-tap-highlight-color:rgba(100,100,100,0);
+     -o-tap-highlight-color:rgba(100,100,100,0);
+     tap-highlight-color:rgba(100,100,100,0);
 }

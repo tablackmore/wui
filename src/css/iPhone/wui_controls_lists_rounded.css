@@ -6,9 +6,13 @@ ul.wui_controls_lists_rounded {list-style: none;
 .wui_controls_lists_rounded li:first-child{
     -webkit-border-top-left-radius: 8px;
     -webkit-border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .wui_controls_lists_rounded li:last-child{
     -webkit-border-bottom-left-radius: 8px;
     -webkit-border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }

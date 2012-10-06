@@ -13,6 +13,7 @@
     text-decoration:inherit;
     color:#fff;
     -webkit-border-radius:8px;
+    border-radius:8px;
     -webkit-tap-highlight-color:#333;
     text-shadow:rgba(40,40,40,0.7) 0 1px 0;
     background:-webkit-gradient( linear,left top,left bottom,from(#89a0be),to(#486a9a),color-stop(0.5,#5473a0),color-stop(0.5,#486a9a) );

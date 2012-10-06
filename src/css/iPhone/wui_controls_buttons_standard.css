@@ -1,6 +1,12 @@
 .wui_controls_buttons_standard {
-    background:-webkit-gradient( linear,left top,left bottom,from(#e2e2e2),to(#8c8a88),color-stop(0.5,#acadae),color-stop(0.5,#82807e) );
-    display:block;
+   /* background:-webkit-gradient( linear,left top,left bottom,from(#e2e2e2),to(#8c8a88),color-stop(0.5,#acadae),color-stop(0.5,#82807e) );*/
+    background: -moz-linear-gradient(top, #e2e2e2 10%, #acadae 50%, #82807e 51%, #8c8a88 89%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#1e5799), color-stop(50%,#2989d8), color-stop(51%,#207cca), color-stop(89%,#7db9e8)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e2e2e2 10%, #acadae 50%, #82807e 51%, #8c8a88 89%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e2e2e2 10%, #acadae 50%, #82807e 51%, #8c8a88 89%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #e2e2e2 10%, #acadae 50%, #82807e 51%, #8c8a88 89%); /* IE10+ */
+	background: linear-gradient(top, #e2e2e2 10%, #acadae 50%, #82807e 51%, #8c8a88 89%); /* W3C */
+	 display:block;
     padding:5px;
     border:1px solid #666;
     text-align:center;
