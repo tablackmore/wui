@@ -41,8 +41,11 @@ wui.controls.control = (function () {
         };
         click = function () {
             var ev = document.createEvent('MouseEvents');
-            ev.initEvent('click', true, true);
-            ev.initEvent('touchstart', true, true);
+            if (typeof document.ontouchstart === "object") {
+                ev.initEvent('touchstart', true, true);
+            } else {
+                ev.initEvent('click', true, true);
+            }
             mainElement.dispatchEvent(ev);
         };
         css = (function () {
