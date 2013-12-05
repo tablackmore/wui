@@ -70,6 +70,7 @@ $color-light: #FFF;
 $color-dark: #000;
 $color-extra: #8EBBFF;
 $color-inactive: #BBB;*/
+/*#dbac00*/
 .wui_position_hbox {
   display: box;
   box-orient: horizontal;
