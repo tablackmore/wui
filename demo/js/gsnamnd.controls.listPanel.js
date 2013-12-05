@@ -3,11 +3,9 @@ gsnamnd.controls.listPanel = function () {
 		that = wui.controls.panels.standard(),
 		infoPanel = gsnamnd.controls.infoPanel();
 	infoPanel.hide();
-
 	that.titlebar = wui.controls.titleBar();
 	that.titlebar.setText("List");
 	that.mainPanel = wui.controls.panels.scroll();
-
 	that.mainPanel.getDomElement();
 	that.addButton = wui.controls.buttons.add();
 	that.addButton.setText("Add");
@@ -15,9 +13,7 @@ gsnamnd.controls.listPanel = function () {
 		addListItem(i);
 		i++;
 	});
-
 	that.titlebar.leftContainer.appendControl(that.addButton);
-
 	that.list = wui.controls.lists.standard();
 	var addListItem = function (i) {
 		var listItem = wui.controls.lists.items.standard();
@@ -39,7 +35,6 @@ gsnamnd.controls.listPanel = function () {
 		addListItem(i);
 	}
 	that.mainPanel.appendControl(that.list);
-
 	that.appendControl(that.titlebar);
 	that.appendControl(that.mainPanel);
 	that.appendControl(infoPanel);
