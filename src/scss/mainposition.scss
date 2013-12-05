@@ -1,0 +1,15 @@
+.wui_position_hbox {
+    display: box;
+    box-orient: horizontal;
+}
+.wui_position_vbox {
+    display: box;
+    box-orient: vertical;
+}
+.wui_position_flex {
+    box-flex:1;
+}
+.wui_position_fullscreen {
+    height:100%;
+    width:100%;
+}

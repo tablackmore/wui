@@ -1,0 +1,21 @@
+@import 'reset';
+@import 'font';
+@import 'color';
+@import 'maindimensions';
+@import 'mainposition';
+/* Style */
+body {
+	font-family: $font-list;
+	user-select: none;
+	background-color: #AAA;
+}
+/* Event stuff */
+* {
+	-webkit-touch-callout: none;
+}
+@import 'buttons';
+@import 'panel';
+@import 'titlebar';
+@import 'menubar';
+@import 'lists';
+@import 'scroll';

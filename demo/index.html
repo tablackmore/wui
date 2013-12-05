@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link href="icomoon/style.css" rel="stylesheet"/>
+		<link href="../dist/css/wui-0.4.0.css" rel="stylesheet"/>
+		<script src="../lib/prefixfree/prefixfree.min.js"></script>
+		<script src="../dist/js/wui-0.4.0.min.js"></script>
+		<script src="js/gsnamnd.js"></script>
+		<script src="js/gsnamnd.app.js"></script>
+		<script src="js/gsnamnd.controls.js"></script>
+		<script src="js/gsnamnd.controls.infoPanel.js"></script>
+		<script src="js/gsnamnd.controls.listPanel.js"></script>
+		<script>
+			var app = gsnamnd.app();
+			document.addEventListener('DOMContentLoaded', function() {
+				var body = document.querySelector('body');
+				body.appendChild(app.getDomElement());
+			}, false);
+		</script>
+
+	</head>
+	<body>
+</body>
+</html>

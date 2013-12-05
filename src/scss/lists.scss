@@ -1,0 +1,59 @@
+.wui_controls_lists_items_arrow_icon:before{
+    content: ">";
+
+}
+.wui_controls_lists_items_arrow_icon {
+    color:$color-buttons-text;
+    padding-left: 8px;
+    font-size: 25px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    padding-left: 8px;
+    -webkit-font-smoothing: antialiased;
+    width: 27px;
+    height: 30px;
+}
+
+ul.wui_controls_lists_standard {
+    user-select: element;
+    -webkit-tap-highlight-color: $color-highlight;
+    list-style: none;
+    margin: -5px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+.wui_controls_lists_standard > li {
+    background-color: #FFFFFF;
+    line-height: 28px;
+    border-top: 1px solid #D0D0D0;
+    color: #222222;
+    margin-left:5px;
+    margin-bottom: -1px;
+    padding: 9px 12px ;
+    text-decoration: none;
+    font-family: $font-list;
+    font-weight: bold;
+    text-shadow: 0px 1px 0px #fff;
+    -webkit-tap-highlight-color: rgba(20,20,20,0.2);
+}
+
+ul.wui_controls_lists_rounded {
+    list-style: none;
+    margin: 5px;
+    padding: 5px;
+}
+
+.wui_controls_lists_rounded li:first-child{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.wui_controls_lists_rounded li:last-child{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
