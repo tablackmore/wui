@@ -1,36 +1,3 @@
-/*
-.wui_controls_buttons_standard {
-    background: linear-gradient(top, #e2e2e2 10%, #acadae 50%, #82807e 51%, #8c8a88 89%); 
-    display:block;
-    padding:5px;
-    border:1px solid #666;
-    text-align:center;
-    font-size:17px;
-    font-weight:bold;
-    text-decoration:inherit;
-    color:inherit;
-    border-radius:8px;
-    tap-highlight-color:#333;
-    text-shadow:rgba(255,255,255,0.7) 0 1px 0;
-}
-
-
-.wui_controls_buttons_back {
-    font-weight:bold;
-    text-align:center;
-    line-height:28px;
-    color:white;
-    text-shadow:rgba(0,0,0,0.6) 0px -1px 0px;
-    font-size:15px;
-    max-width:60px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    border-width:0 8px 0 14px;
-    border-image:url(img/backButton.png) 0 8 0 14;
-    tap-highlight-color:rgba(100,100,100,0);
-}*/
-
 .wui_controls_buttons_greenLamp {
     background-image:-webkit-gradient(radial,7 2,0,7 2,3,from(rgba(255,255,255,0.85)), to(rgba(255,255,255,0))), -webkit-gradient(radial,7 12,0,7 7,14, from(#c7f08b), to(#006013));
 }

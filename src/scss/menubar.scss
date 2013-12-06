@@ -4,6 +4,7 @@
 	text-align: center;
 	height:$height-bars + 7;
 }
+
 .wui_control_menuItem {
 	display: block;
 	height: 1.2em;
@@ -14,11 +15,13 @@
 	color: #808184;
 	text-decoration: none;
 }
+
 .wui_control_menuItem a{
 	font-size: .6em;
 	line-height:1;
 	color: $color-inactive;
 }
+
 .wui_control_menuItem_icon {
 
 	margin-top: -16px;
@@ -34,6 +37,7 @@
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
+
 .wui_control_menuItem_active > *{
 	color: $color-highlight !important; 
 }
